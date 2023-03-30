@@ -26,10 +26,14 @@ class MainActivity : AppCompatActivity() {
         binding.lifecycleOwner=this
 
 
-        viewModel.radius.observe(this,{
-            Log.i(TAG,it)
-        })
 
+
+        binding.btnCalculate.setOnClickListener {
+            viewModel.radius.observe(this,{
+                viewModel.circumferenceValueCalculate(it.toDouble())
+                viewModel.areaValueCalculate(it.toDouble())
+            })
+        }
 
 
 

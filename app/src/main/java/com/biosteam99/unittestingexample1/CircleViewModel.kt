@@ -16,5 +16,12 @@ class CircleViewModel(private val circleCalculationImplement: CircleCalculationI
     val circumferenceValue:LiveData<String>
     get() = circumferenceCircle
 
+    fun areaValueCalculate(radius:Double){
+        areaCircle.value=circleCalculationImplement.areaCircleCalculate(radius).toString()
+    }
+
+    fun circumferenceValueCalculate(radius:Double){
+        circumferenceCircle.value=circleCalculationImplement.circumferenceCircleCalculate(radius).toString()
+    }
 
 }
